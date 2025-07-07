@@ -26,10 +26,38 @@ gameRestart.addEventListener('click', () => {
 });
 
 function hasWinner(){
-    if (xWin.includes(situation.map(str => str.replace('O','S').replace('-','S')).join(''))){
+    if (situation[0] == 'X' && situation[1] == 'X' && situation[2] == 'X'){
         gameStatus.innerHTML = "Player X has won";
-    }else if (oWin.includes(situation.map(str => str.replace('X','S').replace('-','S')).join(''))){
+    }else if (situation[3] == 'X' && situation[4] == 'X' && situation[5] == 'X'){
+        gameStatus.innerHTML = "Player X has won";
+    }else if (situation[6] == 'X' && situation[7] == 'X' && situation[8] == 'X'){
+        gameStatus.innerHTML = "Player X has won";
+    }else if (situation[0] == 'X' && situation[4] == 'X' && situation[8] == 'X'){
+        gameStatus.innerHTML = "Player X has won";
+    }else if (situation[2] == 'X' && situation[4] == 'X' && situation[6] == 'X'){
+        gameStatus.innerHTML = "Player X has won";
+    }else if (situation[0] == 'X' && situation[3] == 'X' && situation[6] == 'X'){
+        gameStatus.innerHTML = "Player X has won";
+    }else if (situation[1] == 'X' && situation[4] == 'X' && situation[7] == 'X'){
+        gameStatus.innerHTML = "Player X has won";
+    }else if (situation[2] == 'X' && situation[5] == 'X' && situation[8] == 'X'){
+        gameStatus.innerHTML = "Player X has won";
+    }else if (situation[0] == 'O' && situation[1] == 'O' && situation[2] == 'O'){
         gameStatus.innerHTML = "Player O has won";
+    }else if (situation[3] == 'O' && situation[4] == 'O' && situation[5] == 'O'){
+        gameStatus.innerHTML = "Player O has won";
+    }else if (situation[6] == 'O' && situation[7] == 'O' && situation[8] == 'O'){
+        gameStatus.innerHTML = "Player O has won";
+    }else if (situation[0] == 'O' && situation[4] == 'O' && situation[8] == 'O'){
+        gameStatus.innerHTML = "Player O has won";
+    }else if (situation[2] == 'O' && situation[4] == 'O' && situation[6] == 'O'){
+        gameStatus.innerHTML = "Player O has won";
+    }else if (situation[0] == 'O' && situation[3] == 'O' && situation[6] == 'O'){
+        gameStatus.innerHTML = "Player O has won";
+    }else if (situation[1] == 'O' && situation[4] == 'O' && situation[7] == 'O'){
+                gameStatus.innerHTML = "Player O has won";
+    }else if (situation[2] == 'O' && situation[5] == 'O' && situation[8] == 'O'){
+                gameStatus.innerHTML = "Player O has won";
     }else{
         if(!situation.includes('-')){
             gameStatus.innerHTML = "Game ended in a draw";
